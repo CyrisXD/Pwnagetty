@@ -3,7 +3,7 @@
 ![pwnagetty](https://i.imgur.com/Cs5yqMI.jpg)
 
 
-Pwnagetty is a cli application written in NodeJS, to streamline the process of downloading handshakes from your Pwnagotchi, verify each PCAP file and convert them to the approiate format (EAPOL or PMKID) ready for Hashcat cracking. All while keeping a log of converted files and BSSID's to illiminate duplicates in the future. **Pwnagetty is currently in BETA**.
+Pwnagetty is a cli application written in NodeJS, to streamline the process of downloading handshakes from your Pwnagotchi, verify each PCAP file and convert them to the appropriate format (EAPOL or PMKID) ready for Hashcat cracking. All while keeping a log of converted files and BSSID's to eliminate duplicates in the future. **Pwnagetty is currently in BETA**.
 
 ## Requirements
 
