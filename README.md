@@ -23,7 +23,7 @@ Choose a directory you'd like to save this in then run the below.
 git clone https://github.com/CyrisXD/Pwnagetty.git
 cd Pwnagetty
 npm install
-sudo npm install -g
+npm install -g
 
 ```
 Edit the config to add your details inside of Pwnagetty/bin/index.js
