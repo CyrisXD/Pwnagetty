@@ -231,12 +231,9 @@ async function main() {
         // Write data back to database
         fs.writeFile(config.database, JSON.stringify(db), () => {
             console.log("Updated database... \n \n")
-            console.log("All done. \n \n")
-            console.log("=======================================================")
-            console.log("Here's some handy Hashcat commands to get cracking. \n")
-            console.log("PMKID: $ hashcat -m 16800 ssid.pmkid wordlist.txt")
-            console.log("HCCAPX: $ hashcat -m 2500 ssid.hccapx wordlist.txt")
-            console.log("======================================================= \n")
+            console.log("===================")
+            console.log("   All done.  ")
+            console.log("=================== \n")
             console.log("\n \n")
             process.exit(1);
         })
