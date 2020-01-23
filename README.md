@@ -5,6 +5,9 @@
 
 Pwnagetty is a cli application written in NodeJS, to streamline the process of downloading handshakes from your Pwnagotchi, verify each PCAP file and convert them to the appropriate format (EAPOL or PMKID) ready for Hashcat cracking. All while keeping a log of converted files and BSSID's to eliminate duplicates in the future. **Pwnagetty is currently in BETA**.
 
+Pwnagetty favors PMKID's and will try to convert this first. If a PMKID is found within a PCAP file, it will ignore the EAPOL as it's not needed. If no PMKID is found, it will then make use of the EAPOL instead. This is why you may end up with more PMKID files and less HCCAPX files. 
+
+
 ## Requirements
 
 Pwnagetty relies on the below. Make sure you have these installed *before* installing Pwnagetty.
@@ -55,3 +58,12 @@ Pwnagetty will then SFTP into your Pwnagotchi, create 3 local folders in your em
 ## Disclaimer
 This was built for educational purposes. (I had fun learning about await/async). It goes without saying, **do not use this tool against or with networks you do not have permission for. I am not liable for your actions.**
 
+## Support this project
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td><a href="https://www.buymeacoffee.com/FiRmVXOZh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" width="150" ></a></td>
+    <td>&nbsp;</td>
+    <td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9LVF3AVKH29H6&source=url"><img src="https://i.ibb.co/Gcw869Q/paypal-donate-button.png" width="150" alt="paypal-donate-button" border="0"></a></td>
+    </tr>
+    </table>
+ 
