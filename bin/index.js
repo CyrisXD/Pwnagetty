@@ -2,6 +2,7 @@
 const path = require('path')
 const fs = require('fs');
 const SftpClient = require('ssh2-sftp-client');
+const commander = require('commander')
 const { exec } = require('child_process');
 
 //====================================
@@ -120,6 +121,29 @@ async function getFiles() {
     }
 }
 
+
+//=====================================
+// Remove processed files from Pwnagotchi
+//=====================================
+async function removeFiles() {
+    console.log("Removing processed files from Pwnagotchi... \n")
+    const client = new SftpClient();
+    const src = config.handshakeDir
+
+    // connect to pwnagotchi and remove files
+    try {
+        await client.connect(config);       
+        let list = await client.list(src, "*.pcap")
+        for (let file of list) {
+            await client.delete(src + file.name);
+        }
+        
+    } finally {
+        client.end();
+    }
+}
+
+
 //===============================================================
 // Extract SSID from PCAP file - Terrible way using Aircrack-ng
 //===============================================================
@@ -182,12 +206,16 @@ function convertFile(file) {
 async function main() {
     try {
         logo();
+        
+        commander
+            .option('-r, --remove', 'delete handshake files after processing')
+            .parse(process.argv);
+        
         await createDB();
         await getFiles();
 
         let files = await readDir();
         let db = await readDB();
-
 
         // if '/pmkid' doesn't exist, create it.
         if (!fs.existsSync('./pmkid')) {
@@ -235,9 +263,13 @@ async function main() {
             console.log("   All done.  ")
             console.log("=================== \n")
             console.log("\n \n")
-            process.exit(1);
         })
 
+        if (commander.remove) {
+            await removeFiles();
+        }
+
+        process.exit(0);
     } catch (err) {
         console.log("Main catch: " + err)
     }
