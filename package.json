@@ -13,6 +13,7 @@
     "pwnagetty": "./bin/index.js"
   },
   "dependencies": {
-    "ssh2-sftp-client": "^5.0.1"
+    "ssh2-sftp-client": "^5.0.1",
+    "commander": "^4.1.1"
   }
 }

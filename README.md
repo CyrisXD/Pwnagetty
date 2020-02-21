@@ -55,6 +55,12 @@ pwnagetty
 
 Pwnagetty will then SFTP into your Pwnagotchi, create 3 local folders in your empty directory and do it's job.
 
+You can use 
+```
+pwnagetty -r
+```
+to remove Pwnagotchi captured files after processing
+
 ## Disclaimer
 This was built for educational purposes. (I had fun learning about await/async). It goes without saying, **do not use this tool against or with networks you do not have permission for. I am not liable for your actions.**
 
