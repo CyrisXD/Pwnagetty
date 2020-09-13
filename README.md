@@ -14,7 +14,7 @@ Pwnagetty relies on the below. Make sure you have these installed *before* insta
 
 [NODEJS](https://nodejs.org/en/) - (Built with NodeJS)
 
-[HCXPCAPTOOL](https://github.com/ZerBea/hcxtools) - (To verify and convert PCAP's)
+[HCXPCAPNGTOOL](https://github.com/ZerBea/hcxtools) - (To verify and convert PCAP's)
 
 [AIRCRACK-NG](https://www.aircrack-ng.org/) - (To extract BSSID's from PCAP's)
 
