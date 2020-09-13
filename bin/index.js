@@ -257,7 +257,7 @@ async function main() {
         };
 
         // Write data back to database
-        fs.writeFile(config.database, JSON.stringify(db), () => {
+        fs.writeFileSync(config.database, JSON.stringify(db), () => {
             console.log("Updated database... \n \n")
             console.log("===================")
             console.log("   All done.  ")
