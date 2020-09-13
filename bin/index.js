@@ -179,14 +179,14 @@ function convertFile(file) {
     return new Promise((resolve, reject) => {
         console.log("Processing: " + file);
         // We favour PMKID's, if we find that we ignore handshakes, if no PMKID is found then we look for a handshake.
-        let convertPMKIDs = exec(`hcxpcaptool -z ./pmkid/${file.replace('.pcap', '')}.pmkid ${config.localDir + file}`, function (error, stdout) {
+        let convertPMKIDs = exec(`hcxpcapngtool -o ./pmkid/${file.replace('.pcap', '')}.pmkid ${config.localDir + file}`, function (error, stdout) {
             if (error) { reject(error) };
 
             if (stdout.includes("PMKID(s) written")) {
                 console.log("Found PMKID");
                 resolve(true)
             } else {
-                let convertHCCAPX = exec(`hcxpcaptool -o ./hccapx/${file.replace('.pcap', '')}.hccapx ${config.localDir + file}`, function (error, stdout) {
+                let convertHCCAPX = exec(`hcxpcapngtool -o ./hccapx/${file.replace('.pcap', '')}.hccapx ${config.localDir + file}`, function (error, stdout) {
                     if (error) { reject(error) };
                     if (stdout.includes("handshake(s) written")) {
                         console.log("Found Handshake");
