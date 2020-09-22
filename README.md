@@ -1,3 +1,5 @@
+## This project is no longer mantained as I do not have the required hardware to run and test. I am accepting pull requests from those that can and want to contribute. 
+
 # Pwnagetty
 
 ![pwnagetty](https://i.imgur.com/Cs5yqMI.jpg)
